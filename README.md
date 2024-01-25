@@ -56,3 +56,12 @@ But not in django:
 ![image](./screenshots/request-body-django.png)
 
 
+## False OpenAPI Specifications
+
+In fastapi, the OpenAPI apecifications are always the reality:
+![image](./screenshots/openapi-fastapi.png)
+
+In djano, the specs can be totally false:
+![image](./screenshots/openapi-django.png)
+
+
