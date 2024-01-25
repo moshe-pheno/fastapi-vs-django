@@ -29,3 +29,14 @@ In this repository the same application is implemented in both frameworks.
 - See [example pull request](https://github.com/moshe-pheno/fastapi-vs-django/pull/1) for a simple change in both frameworks.
 
 
+## Problems with Django
+
+### Autocompletion
+
+Pydantic models used by fastapi are recognized by editor:
+![image](./screenshots/autocomplete-fastapi.png)
+
+Django serializers are not:
+![image](./screenshots/autocomplete-django.png)
+
+
