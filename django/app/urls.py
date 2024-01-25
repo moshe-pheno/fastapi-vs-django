@@ -2,15 +2,13 @@ from datetime import date
 
 from django.urls import path
 from drf_yasg.utils import swagger_auto_schema
-from drf_yasg import openapi
-from drf_yasg.views import get_schema_view
-from rest_framework import permissions
 from rest_framework.decorators import permission_classes, api_view
 from rest_framework.exceptions import MethodNotAllowed
 from rest_framework.permissions import AllowAny
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from app.schema import schema_view
 from app.serializers.participant import Participant
 
 robert = Participant({'name': 'Robert', 'age': 30, 'hobbies': [
@@ -49,17 +47,6 @@ def handle_participants(request: Request) -> Response:
             participants.append(participant)
             return Response(data=participant.data)
     raise MethodNotAllowed(request.method or '')
-
-
-schema_view = get_schema_view(
-    openapi.Info(
-        title='Django App Example',
-        default_version='v1',
-        description='Just an example of a django app',
-    ),
-    public=True,
-    permission_classes=[permissions.AllowAny],
-)
 
 
 urlpatterns = [
