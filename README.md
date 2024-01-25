@@ -81,5 +81,26 @@ Compare the code [`fastapi/api.py`](https://github.com/moshe-pheno/fastapi-vs-dj
 
 
 ## FastAPI + Django ORM
+## API Gateway + Lambda
+
+Using FastAPI as a lambda handler is so simple, see [this pull request](https://github.com/moshe-pheno/fastapi-vs-django/pull/2).
+
+Instead of having to read an `event` json and return a `response` json, the [Mangum](https://mangum.io/) library will correctly process the request using the existing fastapi app.
+
+### Why do we want this?
+
+- Let's say you planned an API that is supposed to run on ECS and you change your mind and want it to operate as a lambda. It's [literally a single line of code](https://github.com/moshe-pheno/fastapi-vs-django/pull/2).
+- You get all FastAPI adventages:
+    - Less code
+    - Readability
+    - Simplicity
+    - Type checks
+    - Autocompletion
+    - Faster development
+    - Swagger out of the box
+
+It's also possible to use [Mangum with django](https://mangum.io/asgi-frameworks/#django) but for a lambda, django start time might be slower.
+
+
 
 It's worth noting that it is simple to use django as an ORM even when using FastAPI as the http server framework.
