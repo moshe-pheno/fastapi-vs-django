@@ -25,8 +25,8 @@
 
 In this repository the same application is implemented in both frameworks.  
 
-- Compare request description and handling, files [`fastapi/api.py`](https://github.com/moshe-pheno/fastapi-vs-django/blob/main/fastapi/api.py) vs [`django/app/urls.py`](https://github.com/moshe-pheno/fastapi-vs-django/blob/main/django/app/urls.py)
-- See [example pull request](https://github.com/moshe-pheno/fastapi-vs-django/pull/1) for a simple change in both frameworks.
+- Compare request description and handling: [`fastapi/api.py`](https://github.com/moshe-pheno/fastapi-vs-django/blob/main/fastapi/api.py) vs [`django/app/urls.py`](https://github.com/moshe-pheno/fastapi-vs-django/blob/main/django/app/urls.py)
+- See [example pull request](https://github.com/moshe-pheno/fastapi-vs-django/pull/1) for how a simple change looks like in both frameworks.
 
 
 ## Problems with Django
