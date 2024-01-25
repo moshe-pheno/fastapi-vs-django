@@ -34,34 +34,42 @@ In this repository the same application is implemented in both frameworks.
 ### Type Checking
 
 Mypy warns about wrong types in fastapi:
+
 ![image](./screenshots/mypy-fastapi.png)
 
 But not about django serializers:
+
 ![image](./screenshots/mypy-django.png)
 
 ### Autocompletion
 
 Pydantic models used by fastapi are recognized by editor:
+
 ![image](./screenshots/autocomplete-fastapi.png)
 
 Django serializers are not:
+
 ![image](./screenshots/autocomplete-django.png)
 
 ### Request Signature
 
 Request content can be type-checked in fastapi:
+
 ![image](./screenshots/request-body-fastapi.png)
 
 But not in django:
+
 ![image](./screenshots/request-body-django.png)
 
 
 ## False OpenAPI Specifications
 
 In fastapi, the OpenAPI apecifications are always the reality:
+
 ![image](./screenshots/openapi-fastapi.png)
 
 In djano, the specs can be totally false:
+
 ![image](./screenshots/openapi-django.png)
 
 
