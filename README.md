@@ -80,7 +80,6 @@ In djano, the specs can be totally false:
 Compare the code [`fastapi/api.py`](https://github.com/moshe-pheno/fastapi-vs-django/blob/main/fastapi/api.py) vs [`django/app/urls.py`](https://github.com/moshe-pheno/fastapi-vs-django/blob/main/django/app/urls.py) and judge for yourself.
 
 
-## FastAPI + Django ORM
 ## API Gateway + Lambda
 
 Using FastAPI as a lambda handler is so simple, see [this pull request](https://github.com/moshe-pheno/fastapi-vs-django/pull/2).
@@ -102,5 +101,8 @@ Instead of having to read an `event` json and return a `response` json, the [Man
 It's also possible to use [Mangum with django](https://mangum.io/asgi-frameworks/#django) but for a lambda, django start time might be slower.
 
 
+## FastAPI + Django = Django Ninga
 
 It's worth noting that it is simple to use django as an ORM even when using FastAPI as the http server framework.
+
+However it is also possible to use [Django Ninja](https://django-ninja.dev/) which combines the fastapi experience into the django framework.
