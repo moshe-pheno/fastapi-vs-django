@@ -62,7 +62,7 @@ But not in django:
 ![image](./screenshots/request-body-django.png)
 
 
-## False OpenAPI Specifications
+### False OpenAPI Specifications
 
 In fastapi, the OpenAPI apecifications are always the reality:
 
