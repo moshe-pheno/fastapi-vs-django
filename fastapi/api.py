@@ -2,6 +2,7 @@ from datetime import date
 from typing import Iterable
 
 from fastapi import FastAPI
+from mangum import Mangum
 
 from models.hobby import Hobby
 from models.participant import Participant
@@ -25,3 +26,6 @@ def list_all_participants() -> Iterable[Participant]:
 def create_participant(details: Participant) -> Participant:
     participants.append(details)
     return details
+
+
+handler = Mangum(app)
