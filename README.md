@@ -31,6 +31,14 @@ In this repository the same application is implemented in both frameworks.
 
 ## Problems with Django
 
+### Type Checking
+
+Mypy warns about wrong types in fastapi:
+![image](./screenshots/mypy-fastapi.png)
+
+But not about django serializers:
+![image](./screenshots/mypy-django.png)
+
 ### Autocompletion
 
 Pydantic models used by fastapi are recognized by editor:
