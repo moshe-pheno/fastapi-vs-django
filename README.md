@@ -47,4 +47,12 @@ Pydantic models used by fastapi are recognized by editor:
 Django serializers are not:
 ![image](./screenshots/autocomplete-django.png)
 
+### Request Signature
+
+Request content can be type-checked in fastapi:
+![image](./screenshots/request-body-fastapi.png)
+
+But not in django:
+![image](./screenshots/request-body-django.png)
+
 
