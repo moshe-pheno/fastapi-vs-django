@@ -73,3 +73,13 @@ In djano, the specs can be totally false:
 ![image](./screenshots/openapi-django.png)
 
 
+
+### Django Code is Less Readable
+
+
+Compare the code [`fastapi/api.py`](https://github.com/moshe-pheno/fastapi-vs-django/blob/main/fastapi/api.py) vs [`django/app/urls.py`](https://github.com/moshe-pheno/fastapi-vs-django/blob/main/django/app/urls.py) and judge for yourself.
+
+
+## FastAPI + Django ORM
+
+It's worth noting that it is simple to use django as an ORM even when using FastAPI as the http server framework.
