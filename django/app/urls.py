@@ -2,6 +2,7 @@ from datetime import date
 
 from django.urls import path
 from drf_yasg.utils import swagger_auto_schema
+from rest_framework import serializers
 from rest_framework.decorators import permission_classes, api_view
 from rest_framework.exceptions import MethodNotAllowed
 from rest_framework.permissions import AllowAny
@@ -20,15 +21,20 @@ robert = Participant({'name': 'Robert', 'age': 30, 'hobbies': [
 participants = [robert]
 
 
+class GetParticipantsQueryString(serializers.Serializer):
+    amount = serializers.IntegerField(default=5)
+
+
 @swagger_auto_schema(
     methods=['get'],
     responses={
         200: Participant(many=True),
     },
-    operation_summary='list all participants',
+    operation_summary='list participants',
 )
 @swagger_auto_schema(
     methods=['post'],
+    query_serializer=GetParticipantsQueryString(),
     request_body=Participant,
     responses={
         200: Participant(),
@@ -40,7 +46,9 @@ participants = [robert]
 def handle_participants(request: Request) -> Response:
     match request.method:
         case 'GET':
-            return Response(data=[participant.data for participant in participants])
+            query = GetParticipantsQueryString(data=request.query_params.dict())
+            query.is_valid(raise_exception=True)
+            return Response(data=[participant.data for participant in participants[:query.data['amount']]])
         case 'POST':
             participant = Participant(data=request.data)
             participant.is_valid(raise_exception=True)
