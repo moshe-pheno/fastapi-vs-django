@@ -17,8 +17,8 @@ participants = [robert]
 
 
 @app.get('participants')
-def list_all_participants() -> Iterable[Participant]:
-    return participants
+def list_participants(amount: int = 5) -> Iterable[Participant]:
+    return participants[:amount]
 
 
 @app.post('participant')
